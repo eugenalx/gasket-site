@@ -1,0 +1,7 @@
+{
+    "recommendations": [
+        "kreativ-software.csharpextensions",
+        "fudge.auto-using",
+        "ms-dotnettools.csdevkit"
+    ]
+}
