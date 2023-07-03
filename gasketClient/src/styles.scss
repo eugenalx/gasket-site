@@ -1,5 +1,7 @@
 @import "./css/utils/colors.scss";
 /* Importing Bootstrap SCSS file. */
+@import '~@fortawesome/fontawesome-free/css/all.min.css';
+
 @import "./node_modules/bootstrap/scss/bootstrap";
 
 /* Importing Datepicker SCSS file. */

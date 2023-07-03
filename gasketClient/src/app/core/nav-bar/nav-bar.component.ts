@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { faCartShopping, faSignOut, faSignIn } from '@fortawesome/free-solid-svg-icons';
+// import { faCartShopping, faSignOut, faSignIn } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-nav-bar',
@@ -7,8 +7,8 @@ import { faCartShopping, faSignOut, faSignIn } from '@fortawesome/free-solid-svg
   styleUrls: ['./nav-bar.component.scss']
 })
 export class NavBarComponent {
-  faCartShopping = faCartShopping;
-  faSignOut = faSignOut;
-  faSignIn = faSignIn;
+  // faCartShopping = faCartShopping;
+  // faSignOut = faSignOut;
+  // faSignIn = faSignIn;
 
 }
