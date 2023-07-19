@@ -4,17 +4,20 @@
       aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <a class="navbar-brand" href="#">EAC Shielding</a>
+    <img class="logo" src="../../assets/images/logo.png" alt="" routerLink="/" />
     <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
       <ul class="navbar-nav gap-4 text-uppercase" style="letter-spacing: 3.5px;">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
+          <a class="" aria-current="page" routerLink="/"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{exact: true}"
+          >Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Shop</a>
+          <a class="" routerLink="/shop" routerLinkActive="active">Shop</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Contact</a>
+          <a class="" routerLink="/contact" routerLinkActive="active">Contact</a>
         </li>
         <li>
         </li>
