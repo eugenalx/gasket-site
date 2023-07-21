@@ -1,6 +1,6 @@
 <div class="">
-  <div class="row">
-    <section class="col-3">
+  <div class="row" *ngIf="types.length > 0 && brands.length > 0">
+    <section class="col-1 col-md-2">
       <h6 class="text-warning ms-3">Sort</h6>
       <select class="form-select mb-3" id="" (change)="onSortSelected($event)">
         <option *ngFor="let sort of sortOptions" [value]="sort.value">{{ sort.name}}</option>
@@ -29,7 +29,7 @@
           <button (click)="onReset()" class="btn btn-outline-success">Reset</button>
         </div>
       </div>
-      <div class="row row-cols-3 g-3">
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-3">
         <div class="col" *ngFor="let product of products">
           <app-product-item [product]="product"></app-product-item>
         </div>
