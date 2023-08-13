@@ -2,9 +2,22 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "args": [
+                "--extensionDevelopmentPath=${workspaceFolder}"
+            ],
+            "name": "Launch Extension",
+            "outFiles": [
+                "${workspaceFolder}/out/**/*.js"
+            ],
+            "preLaunchTask": "npm",
+            "request": "launch",
+            "type": "extensionHost"
+        },
+        
+        {
             // Use IntelliSense to find out which attributes exist for C# debugging
             // Use hover for the description of the existing attributes
-            // For further information visit https://github.com/OmniSharp/omnisharp-vscode/blob/master/debugger-launchjson.md
+            // For further information visit https://github.com/dotnet/vscode-csharp/blob/main/debugger-launchjson.md
             "name": ".NET Core Launch (web)",
             "type": "coreclr",
             "request": "launch",
@@ -29,7 +42,8 @@
         {
             "name": ".NET Core Attach",
             "type": "coreclr",
-            "request": "attach"
+            "request": "attach",
+            "processId": "${command:pickProcess}"
         }
     ]
 }
