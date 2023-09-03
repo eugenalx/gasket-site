@@ -8,10 +8,8 @@
     <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
       <ul class="navbar-nav gap-4 text-uppercase" style="letter-spacing: 3.5px;">
         <li class="nav-item">
-          <a class="" aria-current="page" routerLink="/"
-          routerLinkActive="active"
-          [routerLinkActiveOptions]="{exact: true}"
-          >Home</a>
+          <a class="" aria-current="page" routerLink="/" routerLinkActive="active"
+            [routerLinkActiveOptions]="{exact: true}">Home</a>
         </li>
         <li class="nav-item">
           <a class="" routerLink="/shop" routerLinkActive="active">Shop</a>
@@ -30,12 +28,42 @@
           {{ getCount(basket.items) }}
         </div>
       </a>
-      <a href="#" class="text-secondary">
-        <i class="fa fa-arrow-right-to-bracket"></i>
-      </a>
-      <a href="#" class="text-secondary">
-        <i class="fa-solid fa-arrow-right-from-bracket"></i>
-      </a>
+
+      <ng-container *ngIf="(accountService.currentUser$ | async) === null">
+        <a routerLink="/account/login" class="text-secondary">
+          <i class="fa fa-arrow-right-to-bracket"></i>
+        </a>
+        <a routerLink="/account/register" class="text-secondary">
+          <i class="fa-solid fa-arrow-right-from-bracket"></i>
+        </a>
+      </ng-container>
+      <ng-container *ngIf="accountService.currentUser$ | async as user">
+        <div class="dropdown ms-3 me-5 cursor-pointer" dropdown>
+          <a dropdownToggle class="dropdown-toggle">
+            <strong>Welcome {{user.displayName}}</strong>
+          </a>
+          <ul *dropdownMenu class="dropdown-menu dropdown-menu-right">
+            <li class="py-1">
+              <a routerLink="/basket" class="dropdown-item">
+                <i class="fa fa-shopping-cart me-3"></i>View Basket
+              </a>
+            </li>
+            <li class="py-1">
+              <a routerLink="/orders" class="dropdown-item">
+                <i class="fa fa-history me-3"></i>View Order
+              </a>
+            </li>
+            <div class="dropdown-divider"></div>
+            <li class="py-1">
+              <a (click)="accountService.logout()" class="dropdown-item">
+                <i class="fa fa-sign-out me-3"></i>Logout
+
+              </a>
+            </li>
+          </ul>
+        </div>
+      </ng-container>
+
     </div>
   </div>
 </nav>
